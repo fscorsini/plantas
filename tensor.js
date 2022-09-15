@@ -19,9 +19,10 @@
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
+        
         const flip = true; // whether to flip the webcam
         webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
+        await webcam.setup({ facingMode: "environment" }); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
 
